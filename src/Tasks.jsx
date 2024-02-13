@@ -1,15 +1,16 @@
-import { useState } from "react"
-import Task from "./Task"
+import { Task } from "./Task"
 
-function Tasks({ listTasksData }) {
-    const [listeTasks, setListTasks] = useState(listTasksData)
+export function Tasks({ listTasksData }) {
     return (
-        <ul className="list-todo">
-            {listeTasks.map((items, index) => {
-                return (<Task key={`task-${index}`} taskName={items.taskName} />)
-            })}
-        </ul>
+        <div className="text-center my-12 w-2/3 m-auto">
+            <ul>
+                {
+                    listTasksData.map((task, index) => {
+                        return (<Task key={`task-${index}`} task={task} />)
+                    })
+                }
+                <Task />
+            </ul>
+        </div>
     )
 }
-
-export default Tasks
