@@ -15,7 +15,7 @@ export function Form({ listPreselectedTasksData, handlChangeTasksList }) {
             <div className="flex items-center gap-8 justify-between">
                 <input onChange={(e) => setTaskName(e.target.value)} value={taskName} placeholder="Indiquer nom de la tâche" type="text" id="input-task" className="border border-neutral-300 p-4 rounded w-1/2" />
                 <span>ou</span>
-                <select name="" id="" className="border border-neutral-300 p-4 rounded w-full">
+                <select onChange={(e) => setTaskName(e.target.value)} name="" id="" className="border border-neutral-300 p-4 rounded w-full">
                     {
                         listPreselectedTasksData.map((task, index) => {
                             return (<option key={`opt-${index}`} value="">{task.taskName}</option>)

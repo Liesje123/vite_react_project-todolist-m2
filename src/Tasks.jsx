@@ -5,8 +5,8 @@ export function Tasks({ listTasksData }) {
         <div className="text-center my-12 w-2/3 m-auto">
             <ul>
                 {
-                    listTasksData.map((task, index) => {
-                        return (<Task key={`task-${index}`} task={task} />)
+                    listTasksData.map((item, index) => {
+                        return (<Task key={`task-${index}`} taskName={item.todo} />)
                     })
                 }
                 <Task />
